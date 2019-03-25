@@ -18,6 +18,14 @@ class VehicleTest <Minitest::Test
     assert vehicle_2.car?
   end
 
+  def test_vehicle_knows_if_its_a_motorcycle
+    vehicle_1 = Vehicle.new("motorcycle", true, true)
+    vehicle_2 = Vehicle.new("car", true, true)
+
+    assert vehicle_1.motorcycle?
+    assert_equal false, vehicle_2.motorcycle?
+  end
+
   def test_vehicle_knows_its_a_tractor
     vehicle_1 = Vehicle.new("tractor", true, true)
     vehicle_2 = Vehicle.new("car", true, true)

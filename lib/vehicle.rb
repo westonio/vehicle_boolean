@@ -21,6 +21,10 @@ class Vehicle
     model == "pickup"
   end
 
+  def motorcycle?
+    model == "motorcycle"
+  end
+
   def four_wheel_drive?
     four_wheel
   end

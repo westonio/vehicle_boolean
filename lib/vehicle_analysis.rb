@@ -2,7 +2,9 @@
 class VehicleAnalysis
 
   def analyze(vehicle)
-    if vehicle.car?
+    if vehicle.motorcycle?
+      puts "Vehicle has two wheels"
+    elsif vehicle.car?
       if vehicle.four_wheel_drive? || !vehicle.four_wheel_drive?
         puts "Vehicle has four wheels "
         if vehicle.four_wheel_drive?
