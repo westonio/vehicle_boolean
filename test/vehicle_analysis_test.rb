@@ -20,7 +20,7 @@ class VehicleTest <Minitest::Test
       VehicleAnalysis.new.analyze(vehicle_1)
     end
 
-    assert stdout.include?("Vehicle has four wheels")
+    assert stdout.include?("This is a big vehicle")
   end
 
   def test_it_knows_that_motorcycle_has_two_wheels
@@ -40,7 +40,7 @@ class VehicleTest <Minitest::Test
       VehicleAnalysis.new.analyze(vehicle_1)
     end
 
-    assert stdout.include?("Vehicle has four wheels")
+    assert stdout.include?("This is a smaller vehicle")
   end
 
   def test_it_knows_that_tractor_has_four_wheels
@@ -50,7 +50,7 @@ class VehicleTest <Minitest::Test
       VehicleAnalysis.new.analyze(vehicle_1)
     end
 
-    assert stdout.include?("Vehicle has four wheels")
+    assert stdout.include?("This is a big vehicle")
   end
 
   def test_it_knows_that_vehicle_has_four_wheel_drive
@@ -94,33 +94,4 @@ class VehicleTest <Minitest::Test
     assert_equal false, stdout.include?("with big wheels in the back")
   end
 
-  def test_it_knows_that_all_tractors_have_four_wheels
-    vehicle_1 = Vehicle.new("tractor", false, false)
-
-    result, stdout, stderr = OStreamCatcher.catch do
-      VehicleAnalysis.new.analyze(vehicle_1)
-    end
-
-    assert stdout.include?("Vehicle has four wheels")
-  end
-
-  def test_it_knows_that_all_cars_have_four_wheels
-    vehicle_1 = Vehicle.new("car", false, false)
-
-    result, stdout, stderr = OStreamCatcher.catch do
-      VehicleAnalysis.new.analyze(vehicle_1)
-    end
-
-    assert stdout.include?("Vehicle has four wheels")
-  end
-
-  def test_it_knows_that_all_pickups_have_four_wheels
-    vehicle_1 = Vehicle.new("pickup", false, false)
-
-    result, stdout, stderr = OStreamCatcher.catch do
-      VehicleAnalysis.new.analyze(vehicle_1)
-    end
-
-    assert stdout.include?("Vehicle has four wheels")
-  end
 end

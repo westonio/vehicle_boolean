@@ -6,7 +6,7 @@ class VehicleAnalysis
       puts "Vehicle has two wheels"
     elsif vehicle.car?
       if vehicle.four_wheel_drive? || !vehicle.four_wheel_drive?
-        puts "Vehicle has four wheels "
+        puts "This is a smaller vehicle"
         if vehicle.four_wheel_drive?
           puts "with four wheel drive"
         else
@@ -17,7 +17,7 @@ class VehicleAnalysis
         end
       end
     elsif vehicle.tractor?
-      puts "Vehicle has four wheels "
+      puts "This is a big vehicle"
       if vehicle.four_wheel_drive?
         puts "with four wheel drive"
       else
@@ -27,7 +27,7 @@ class VehicleAnalysis
         puts "with big wheels in the back"
       end
     elsif vehicle.pickup?
-      puts "Vehicle has four wheels "
+      puts "This is a big vehicle"
       if vehicle.four_wheel_drive?
         puts "with four wheel drive"
       else
