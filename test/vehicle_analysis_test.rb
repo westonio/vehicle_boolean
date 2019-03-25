@@ -23,16 +23,6 @@ class VehicleTest <Minitest::Test
     assert stdout.include?("This is a big vehicle")
   end
 
-  def test_it_knows_that_motorcycle_has_two_wheels
-    vehicle_1 = Vehicle.new("motorcycle", true, true)
-
-    result, stdout, stderr = OStreamCatcher.catch do
-      VehicleAnalysis.new.analyze(vehicle_1)
-    end
-
-    assert stdout.include?("Vehicle has two wheels")
-  end
-
   def test_it_knows_that_car_has_four_wheels
     vehicle_1 = Vehicle.new("car", true, true)
 
@@ -85,7 +75,7 @@ class VehicleTest <Minitest::Test
   end
 
   def test_it_knows_that_vehicle_does_not_have_big_back_wheels
-    vehicle_1 = Vehicle.new("tractor", false, false)
+    vehicle_1 = Vehicle.new("car", true, true)
 
     result, stdout, stderr = OStreamCatcher.catch do
       VehicleAnalysis.new.analyze(vehicle_1)
