@@ -3,30 +3,14 @@
 class VehicleAnalysis
 
   def analyze(vehicle)
+    puts "Vehicle has four wheels"
     if vehicle.car?
-      if vehicle.four_wheel_drive? || !vehicle.four_wheel_drive?
-        puts "Vehicle has four wheels "
-        if vehicle.four_wheel_drive?
-          puts "with four wheel drive"
-        else
-          puts "with two wheel drive"
-        end
-      end
+      puts vehicle.four_wheel_drive? ? "with four wheel drive" : "with two wheel drive"
     elsif vehicle.tractor?
-      puts "Vehicle has four wheels "
-      if vehicle.big_back_wheels?
-        puts "with big wheels in the back"
-      end
+      puts "with big wheels in the back" if vehicle.big_back_wheels?
     elsif vehicle.pickup?
-      puts "Vehicle has four wheels "
-      if vehicle.four_wheel_drive?
-        puts "with four wheel drive"
-      else
-        puts "with two wheel drive"
-      end
-      if vehicle.big_back_wheels?
-        puts "with big wheels in the back"
-      end
+      puts vehicle.four_wheel_drive? ? "with four wheel drive" : "with two wheel drive"
+      puts "with big wheels in the back" if vehicle.big_back_wheels?
     end
   end
 
